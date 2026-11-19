@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#385848">
+<meta name="description" content="Guide autonome de révision 3PDG260 : famille 3, approches sociales et coopératives. Exemples, activités interactives et entraînement avec rétroactions.">
+<title>Famille 3 — Approches sociales et coopératives | 3PDG260</title>
+<style>
+:root{--fond:#F6F7F2;--carte:#fff;--texte:#25342B;--texte2:#4E6254;--bordure:#DCE3D9;--encre:#385848;--inter:#526F55;--inter-f:#EFF3E9;--ok:#34694B;--nok:#91483B;--proc:#406D59;--proc-f:#ECF3EB;--strat:#80634A;--strat-f:#F4EFE7;--rais:#426F68;--rais-f:#EAF3EF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--fond);color:var(--texte);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;font-size:17px;line-height:1.65}
+a{color:var(--encre)}
+:focus-visible{outline:3px solid var(--inter);outline-offset:2px}
+.saut{position:absolute;left:-999px;top:0;background:var(--encre);color:#fff;padding:.6rem 1rem;z-index:50}
+.saut:focus{left:1rem}
+.mise{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav.menu{background:linear-gradient(165deg,#385848 0%,#28483A 100%);color:#fff;padding:1.6rem 1rem;position:sticky;top:0;height:100vh;overflow-y:auto}
+nav.menu .titre-guide{font-size:.85rem;letter-spacing:.04em;opacity:.85;margin:0 0 .3rem}
+nav.menu h2{font-size:1.15rem;margin:0 0 1.2rem;color:#fff;line-height:1.3}
+nav.menu ol{list-style:none;padding:0;margin:0}
+nav.menu li a{display:block;color:#fff;text-decoration:none;padding:.5rem .7rem;border-radius:8px;font-size:.95rem;border-left:3px solid transparent}
+nav.menu li a:hover{background:rgba(255,255,255,.1)}
+nav.menu li a.actif{background:rgba(255,255,255,.16);border-left-color:#fff}
+nav.menu .legende-menu{margin-top:1.5rem;font-size:.82rem;opacity:.95;border-top:1px solid rgba(255,255,255,.25);padding-top:1rem}
+nav.menu .legende-menu div{margin:.45rem 0}
+main{padding:2.3rem clamp(1rem,4vw,3.5rem) 4rem;max-width:1100px;width:100%;min-width:0}
+section{padding-top:1.5rem;margin-bottom:3rem;border-bottom:1px solid var(--bordure);scroll-margin-top:1rem}
+section:last-of-type{border-bottom:0}
+h1{font-size:2rem;color:var(--encre);line-height:1.25;margin:.5rem 0 1rem}
+h2{font-size:1.6rem;color:var(--encre);margin:0 0 1rem;line-height:1.3}
+h3{font-size:1.2rem;color:var(--encre);margin:1.65rem 0 .7rem}
+h4{font-size:1.03rem;margin:1rem 0 .4rem}
+.chapeau{font-size:1.1rem;color:var(--texte2)}
+.carte{background:var(--carte);border:1px solid var(--bordure);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 4px 20px rgba(35,56,44,.035)}
+.grille3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.fam{border-radius:12px;padding:1rem 1.2rem;border:1px solid;min-width:0}
+.fam h4{margin-top:0}
+.fam.p{background:var(--proc-f);border-color:var(--proc)}.fam.p h4{color:var(--proc)}
+.fam.s{background:var(--strat-f);border-color:var(--strat)}.fam.s h4{color:var(--strat)}
+.fam.r{background:var(--rais-f);border-color:var(--rais)}.fam.r h4{color:var(--rais)}
+.etiq{display:inline-block;font-size:.8rem;font-weight:700;padding:.12rem .55rem;border-radius:999px;border:1px solid}
+.etiq.p{color:var(--proc);border-color:var(--proc);background:var(--proc-f)}
+.etiq.s{color:var(--strat);border-color:var(--strat);background:var(--strat-f)}
+.etiq.r{color:var(--rais);border-color:var(--rais);background:var(--rais-f)}
+.encadre{border-left:5px solid;border-radius:0;padding:.9rem 1.2rem;margin:1.2rem 0;background:var(--carte)}
+.encadre .tete{font-weight:700;margin-bottom:.3rem}
+.encadre.vigil{border-color:var(--nok)}.encadre.vigil .tete{color:var(--nok)}
+.encadre.garder{border-color:var(--ok)}.encadre.garder .tete{color:var(--ok)}
+.encadre.cua{border-color:var(--encre)}.encadre.cua .tete{color:var(--encre)}
+.activite{background:var(--inter-f);border:1px solid #B5C9B7;border-radius:14px;padding:1.2rem 1.4rem;margin:1.8rem 0}
+.activite>.tete{color:var(--inter);font-weight:750;font-size:1.1rem;margin-bottom:.4rem}
+.activite .consigne{margin-top:0}
+.defile{overflow-x:auto}
+table{border-collapse:collapse;width:100%;margin:1rem 0;background:var(--carte);font-size:.95rem}
+th,td{border:1px solid var(--bordure);padding:.6rem .7rem;text-align:left;vertical-align:top}
+thead th{background:var(--encre);color:#fff}tbody th{background:#F2F5EF}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--carte);border:1px solid var(--inter);color:var(--inter);border-radius:8px;padding:.47rem .9rem;margin:.2rem .3rem .2rem 0}
+.btn:hover{background:#E8EFE7}.btn.plein{background:var(--inter);color:#fff}
+.item{background:var(--carte);border:1px solid var(--bordure);border-radius:10px;padding:.8rem 1rem;margin:.7rem 0}
+.item fieldset{border:0;padding:0;margin:0;min-width:0}
+.item legend{font-weight:700;margin:0 0 .6rem;padding:0}
+.choix{display:flex;align-items:flex-start;gap:.55rem;margin:.48rem 0;cursor:pointer}
+.choix input{margin-top:.42rem;flex-shrink:0;accent-color:var(--inter)}
+.retro{margin-top:.6rem;padding:.6rem .8rem;border-radius:8px;font-size:.95rem}
+.retro.ok{border:1px solid var(--ok);color:#1E5420;background:#EBF4ED}
+.retro.nok{border:1px solid var(--nok);color:#79392D;background:#FBEEEB}
+.retro.neutre{border:1px solid #B8C9B8;background:#fff;color:var(--texte2)}
+.onglets{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0;border-bottom:2px solid var(--encre)}
+.onglets button{background:var(--carte);border:1px solid var(--bordure);border-bottom:0;border-radius:8px 8px 0 0;padding:.55rem .9rem;color:var(--encre)}
+.onglets button[aria-selected="true"]{background:var(--encre);color:#fff;border-color:var(--encre)}
+.panneau{background:var(--carte);border:1px solid var(--bordure);border-top:0;border-radius:0 0 12px 12px;padding:1.2rem 1.4rem}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.8rem}
+.role{border:1px solid var(--bordure);border-radius:10px;padding:.8rem 1rem;background:#FCFDFB}
+.role h4{margin-top:0;font-size:.98rem;color:var(--encre)}
+.role ul{margin:.3rem 0 0;padding-left:1.1rem}
+.coche label{display:flex;gap:.6rem;align-items:flex-start;padding:.35rem 0}
+.coche input{width:1.15rem;height:1.15rem;margin-top:.25rem;accent-color:var(--inter)}
+select{font:inherit;padding:.55rem;border-radius:7px;border:1px solid var(--texte2);max-width:100%;background:#fff;color:var(--texte)}
+details{background:var(--carte);border:1px solid var(--bordure);border-radius:10px;padding:.65rem 1rem;margin:.8rem 0}
+summary{cursor:pointer;font-weight:650;color:var(--encre)}
+.refs li{margin:.45rem 0;font-size:.93rem}
+.haut{display:inline-block;margin-top:1rem;font-size:.9rem}
+.mobile-menu{display:none}
+.progression{height:4px;position:fixed;top:0;left:0;right:0;z-index:30;pointer-events:none}
+.progression span{display:block;height:100%;width:0;background:#8FB99D;transition:width .12s linear}
+.intro-hero{position:relative;background:linear-gradient(138deg,#E6EEE5 0%,#F3F5ED 60%,#FBFCF8 100%);border:1px solid #CEDCCD;border-radius:20px;padding:2rem clamp(1.2rem,3.4vw,2.6rem);overflow:hidden;margin:-.35rem 0 1.5rem}
+.intro-hero::after{content:"";position:absolute;width:235px;height:235px;border:38px solid rgba(111,151,121,.10);border-radius:50%;right:-90px;top:-90px;pointer-events:none}
+.sur-titre{display:inline-flex;align-items:center;gap:.55rem;color:#426451;text-transform:uppercase;letter-spacing:.11em;font-size:.75rem;font-weight:800;margin:0 0 1rem}
+.sur-titre::before{content:"";width:21px;height:2px;background:#759781}
+.intro-hero h1{font-size:clamp(2rem,3.6vw,3.15rem);max-width:780px;margin:0 0 1rem;line-height:1.13;letter-spacing:-.035em}
+.intro-hero .chapeau{font-size:1.08rem;max-width:760px;color:#42594A;margin:0 0 1.4rem}
+.actions-accueil{display:flex;flex-wrap:wrap;gap:.7rem;position:relative;z-index:1}
+.action{display:inline-flex;align-items:center;gap:.6rem;border:1px solid #6F9577;border-radius:9px;padding:.65rem 1rem;text-decoration:none;font-weight:700;font-size:.93rem;line-height:1.35;background:#fff;color:#385848}
+.action.principale{background:#385848;color:#fff;border-color:#385848}
+.action:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(39,70,52,.12)}
+.parcours{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:1.2rem 0 1.8rem}
+.parcours a{display:block;text-decoration:none;color:var(--texte);background:#fff;border:1px solid var(--bordure);border-radius:12px;padding:1rem 1.1rem;min-width:0}
+.parcours a:hover{border-color:#88A892;background:#FBFDF9}
+.parcours strong{display:block;color:var(--encre);font-size:.98rem}
+.parcours span{display:block;font-size:.88rem;color:var(--texte2);line-height:1.5;margin-top:.28rem}
+.note-methode{background:#F0F4EB;border:1px solid #C8D8C5;border-radius:10px;padding:.9rem 1rem;font-size:.94rem;color:#344D3A}
+.chap-num{display:inline-block;color:#688373;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 .4rem}
+.note-lecture{font-size:.9rem;color:var(--texte2);margin-top:-.1rem}
+.revision-intro{display:flex;flex-wrap:wrap;gap:.55rem;margin:.8rem 0 1.2rem}
+.revision-intro span{display:inline-block;background:#ECF3EB;color:#385848;border:1px solid #BDD1BE;border-radius:999px;padding:.24rem .7rem;font-size:.85rem;font-weight:650}
+.revision-cas{background:#fff;border:1px solid #C7D6C5;border-radius:14px;padding:1rem 1.3rem;margin:1rem 0}
+.revision-cas h3{margin:.2rem 0 .7rem}
+.revision-etape{background:#fff;border:1px solid var(--bordure);border-radius:13px;padding:1.2rem 1.3rem;margin:1.1rem 0}
+.revision-etape h3{margin:.1rem 0 .5rem;font-size:1.12rem}
+.revision-etape textarea{width:100%;min-height:108px;resize:vertical;border:1px solid #AEBFAF;border-radius:9px;padding:.7rem .8rem;color:var(--texte);font:inherit;line-height:1.5}
+.revision-etape label.prompt{display:block;font-weight:650;margin:.55rem 0 .5rem;color:var(--encre)}
+.revision-verif{background:#F5F8F3;border:1px solid #D6E0D3;border-radius:10px;padding:.8rem 1rem;margin:1rem 0}
+.revision-verif p{font-weight:650;color:var(--encre);margin:0 0 .35rem}
+.revision-verif label{display:flex;align-items:flex-start;gap:.55rem;padding:.24rem 0;font-size:.93rem}
+.revision-verif input{width:1.1rem;height:1.1rem;margin-top:.22rem;accent-color:var(--inter);flex-shrink:0}
+.revision-pied{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:1rem}
+.revision-compteur{font-weight:700;color:var(--encre);margin:.3rem 0}
+.revision-avertissement{font-size:.88rem;color:var(--texte2);margin:.5rem 0}
+.pratique-texte{background:#F8FBF7;border-left:3px solid #8BA88F;padding:.7rem 1rem;margin:.65rem 0;font-style:italic}
+.questions{padding-left:1.35rem}.questions li{margin-bottom:.55rem}
+.mini-chaine{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:1rem 0}
+.mini-chaine span{background:#EAF3EF;border:1px solid #B7D0C1;padding:.5rem .65rem;border-radius:8px;font-size:.9rem;font-weight:650}
+.mini-chaine b{color:var(--inter)}
+.petit{font-size:.9rem;color:var(--texte2)}
+@media(max-width:860px){.mise{grid-template-columns:1fr}nav.menu{position:static;height:auto;padding:1rem 1rem .8rem}nav.menu h2{margin:0;font-size:1rem}nav.menu .titre-guide{margin-bottom:.2rem}.mobile-menu{display:inline-flex;float:right;align-items:center;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:7px;padding:.35rem .7rem;font-size:.9rem}nav.menu ol,nav.menu .legende-menu{display:none}nav.menu.ouvert ol,nav.menu.ouvert .legende-menu{display:block}nav.menu ol{margin-top:1rem}main{padding-top:1.3rem}.parcours{grid-template-columns:1fr}}
+@media(max-width:560px){body{font-size:16px}h2{font-size:1.42rem}.intro-hero{padding:1.4rem}.intro-hero h1{font-size:2rem}.grille3,.roles{grid-template-columns:minmax(0,1fr)}.activite,.panneau{padding:1rem}.mini-chaine{display:block}.mini-chaine span{display:block;margin:.35rem 0}.mini-chaine b{display:none}}
+@media print{nav.menu,.saut,.actions-accueil,.parcours,.progression,.activite button,.revision-pied,.mobile-menu{display:none}.mise{display:block}body{background:#fff}.intro-hero{border:0;padding:.5rem 0;background:#fff}.panneau[hidden]{display:block!important}.revision-etape textarea{min-height:60px}}
+</style>
+</head>
+<body>
+<a class="saut" href="#contenu">Aller au contenu</a>
+<div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+<div class="mise">
+<nav class="menu" aria-label="Sections du guide">
+  <button type="button" class="mobile-menu" id="mobile-menu" aria-expanded="false" aria-controls="liens-navigation">☰ Menu</button>
+  <p class="titre-guide">3PDG260 · Approches pédagogiques</p>
+  <h2>Famille 3 · Approches sociales et coopératives</h2>
+  <ol id="liens-navigation">
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#fondements">0. Pourquoi apprendre ensemble?</a></li>
+    <li><a href="#modeles">1. Trois configurations à distinguer</a></li>
+    <li><a href="#choisir">2. Concevoir une vraie coopération</a></li>
+    <li><a href="#conduire">3. Comment accompagner le groupe?</a></li>
+    <li><a href="#evaluer">4. Évaluer et rendre accessible</a></li>
+    <li><a href="#revision">5. M'entraîner pour l'examen</a></li>
+    <li><a href="#cloture">Aide-mémoire et références</a></li>
+  </ol>
+  <div class="legende-menu">
+    <div>▣ Structure coopérative : apports complémentaires</div>
+    <div>◉ Débat : arguments et écoute</div>
+    <div>△ Enquête de groupe : construire ensemble</div>
+    <div>✎ Activité interactive avec rétroaction</div>
+  </div>
+</nav>
+<main id="contenu">
+
+<section id="accueil" aria-labelledby="t-accueil">
+  <div class="intro-hero">
+    <p class="sur-titre">3PDG260 · Guide de révision · Famille 3</p>
+    <h1 id="t-accueil">Apprendre avec les autres : quand les interactions font vraiment apprendre</h1>
+    <p class="chapeau">Une équipe peut produire un excellent travail sans que tous ses membres aient appris. Ce guide aide à analyser l'interdépendance, l'activité intellectuelle de chacun, le rôle de l'enseignante et les preuves d'apprentissage.</p>
+    <div class="actions-accueil">
+      <a class="action principale" href="#modeles">Explorer les approches</a>
+      <a class="action" href="#revision">M'entraîner en autonomie</a>
+      <a class="action" href="#cloture">Consulter l'aide-mémoire</a>
+    </div>
+  </div>
+  <p class="note-lecture">Pour réviser seule : avancez à votre rythme, répondez aux activités ✎ avant de consulter les explications, puis rédigez une analyse de vignette. Les rétroactions proposent des pistes, pas une réponse unique. Le guide fonctionne hors connexion.</p>
+  <div class="parcours">
+    <a href="#fondements"><strong>Je veux comprendre</strong><span>Différence entre travailler en groupe, coopérer et construire ensemble.</span></a>
+    <a href="#choisir"><strong>Je dois concevoir une activité</strong><span>Interdépendance, responsabilité individuelle, rôles et échanges.</span></a>
+    <a href="#revision"><strong>Je veux réviser pour l'examen</strong><span>Trois situations fictives, cinq analyses guidées, rétroactions et téléchargement.</span></a>
+  </div>
+  <div class="activite"><div class="tete">✎ Une première intuition</div><p class="consigne">Qu'est-ce qui permet le mieux d'affirmer qu'une activité relève de la famille 3?</p><div data-quiz="diagnostic"></div></div>
+  <div class="carte">
+    <h3 style="margin-top:0">À la fin du guide, vous serez capables de :</h3>
+    <ol>
+      <li><strong>Distinguer</strong> une simple organisation en groupes d'une coopération qui soutient réellement les apprentissages.</li>
+      <li><strong>Reconnaître</strong> plusieurs approches sociales, sans confondre une structure particulière (comme le jigsaw) avec toute la famille.</li>
+      <li><strong>Expliquer</strong> ce que les élèves font intellectuellement lorsqu'ils expliquent, comparent, argumentent, enseignent à un pair ou élaborent une synthèse.</li>
+      <li><strong>Analyser</strong> les interventions de l'enseignante, les obstacles à la participation et l'alignement de l'évaluation.</li>
+      <li><strong>Justifier</strong> un ajustement réaliste à partir d'indices précis, avec une attention à la CUA et à l'équité de participation.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="fondements" aria-labelledby="t-fondements">
+  <p class="chap-num">Chapitre 0</p>
+  <h2 id="t-fondements">Ce qui transforme un groupe en milieu d'apprentissage</h2>
+  <p>Dans la famille 3 de Joyce, Weil et Calhoun, les interactions ne sont pas seulement un moyen de répartir le travail : elles participent à <strong>la compréhension, à l'argumentation et à la construction du savoir</strong>. Mais une interaction ne devient éducative que si la tâche, les responsabilités et les échanges sont pensés pour cela.</p>
+  <div class="grille3">
+    <article class="fam p"><h4>Travailler en équipe</h4><p>Des élèves partagent une table ou se répartissent des tâches. C'est une <strong>modalité d'organisation</strong>, sans garantie d'apprentissage commun ni de contribution de chacun.</p><p><strong>Question :</strong> pourraient-ils simplement travailler côte à côte?</p></article>
+    <article class="fam s"><h4>Apprentissage coopératif</h4><p>Des responsabilités complémentaires organisent l'entraide, avec <strong>interdépendance positive</strong>, responsabilité individuelle et régulation. Chacun a besoin des autres et doit contribuer.</p><p><strong>Question :</strong> que manquerait-il au groupe sans la contribution de cet élève?</p></article>
+    <article class="fam r"><h4>Collaboration</h4><p>Les élèves <strong>élaborent ensemble</strong> une compréhension, une argumentation ou une production, souvent avec des rôles moins prédéfinis. Les interactions doivent toujours soutenir le raisonnement.</p><p><strong>Question :</strong> qu'ont-ils construit ou révisé grâce aux échanges?</p></article>
+  </div>
+  <div class="encadre vigil"><div class="tete">! L'erreur qui revient souvent</div><p>« Ils étaient quatre et ils ont présenté une affiche » ne prouve pas que la coopération a fait apprendre. On doit voir <strong>qui a apporté quoi, ce que les autres en ont fait et ce que chacun a finalement compris</strong>.</p></div>
+  <h3>Six conditions à surveiller</h3>
+  <div class="defile"><table>
+    <thead><tr><th>Condition</th><th>Question d'observation</th><th>Indice possible</th></tr></thead>
+    <tbody>
+      <tr><th>Interdépendance positive</th><td>La réussite demande-t-elle de mettre en commun des apports complémentaires?</td><td>Des ressources différentes sont nécessaires à une décision commune.</td></tr>
+      <tr><th>Responsabilité individuelle</th><td>Peut-on voir ce que chacun comprend et apporte?</td><td>Chaque élève explique une idée ou complète un bref billet individuel.</td></tr>
+      <tr><th>Interactions intellectuelles</th><td>Les élèves expliquent-ils, questionnent-ils, comparent-ils les idées?</td><td>« Je retiens cette explication parce que… » plutôt que « J'ai fini ma partie ».</td></tr>
+      <tr><th>Habiletés sociales enseignées</th><td>Les règles d'écoute, de désaccord et d'entraide sont-elles rendues explicites?</td><td>Reformuler l'idée d'un pair avant de répondre.</td></tr>
+      <tr><th>Participation équitable</th><td>Les rôles et les ressources évitent-ils la domination ou l'effacement?</td><td>Rotation des rôles, temps de réflexion, vérification des contributions.</td></tr>
+      <tr><th>Objectivation du contenu et du groupe</th><td>Que savent-ils maintenant? Comment ont-ils coopéré?</td><td>Une conclusion individuelle et un ajustement proposé par l'équipe.</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Fondements et triangle de Houssaye : nuancer</h3>
+  <p><strong>Vygotski</strong> éclaire le rôle du langage, de l'interaction et du soutien entre personnes. <strong>Johnson et Johnson</strong> soulignent notamment l'interdépendance et la responsabilité individuelle; <strong>Aronson</strong> a développé la méthode mosaïque (jigsaw); <strong>Sharan et Sharan</strong> ont travaillé l'investigation de groupe. Les approches sociales peuvent aussi mobiliser des processus cognitifs propres à la famille du traitement de l'information.</p>
+  <div class="encadre garder"><div class="tete">✓ Houssaye : ne pas confondre « social » et « former »</div><p>Lorsqu'un groupe compare des arguments ou construit une explication, la relation <strong>élèves–savoir (« apprendre »)</strong> peut être particulièrement visible, même si les élèves dialoguent. Quand l'enseignante organise les échanges, la relation <strong>enseignante–élèves (« former »)</strong> peut prendre plus de place. Lorsqu'elle structure un concept, la relation <strong>enseignante–savoir (« enseigner »)</strong> peut devenir plus apparente. Il faut <strong>observer le moment, puis justifier</strong>, et non attribuer un processus unique à toute la famille.</p></div>
+  <div class="activite"><div class="tete">✎ Travail de groupe ou apprentissage coopératif?</div><p class="consigne">Quelle situation fournit la meilleure preuve d'une interdépendance qui sert l'apprentissage?</p><div data-quiz="fondements"></div></div>
+</section>
+
+<section id="modeles" aria-labelledby="t-modeles">
+  <p class="chap-num">Chapitre 1</p>
+  <h2 id="t-modeles">Trois configurations possibles, plusieurs combinaisons</h2>
+  <p>Ces exemples servent à comparer des configurations typiques. <strong>Ils n'affirment pas ce que les équipes 7 et 8 ont précisément animé.</strong> Une même situation peut combiner plusieurs familles : le choix doit être justifié par ce qu'on fait apprendre.</p>
+  <div class="grille3">
+    <article class="fam p">
+      <span class="etiq p">Coopération structurée</span>
+      <h4>Groupes d'experts / méthode mosaïque</h4>
+      <p><strong>Exemple :</strong> comprendre pourquoi les paysages d'une région changent. Chaque élève étudie une source complémentaire : relief, activité humaine ou climat.</p>
+      <p><strong>Étapes :</strong> équipe de base → groupes experts → enseignement réciproque → synthèse et vérification individuelle.</p>
+      <p><strong>Apprentissage :</strong> expliquer sa source, questionner, relier les contributions pour comprendre un phénomène d'ensemble.</p>
+      <p><strong>Piège :</strong> chacun récite « son morceau » sans qu'on reconstruise une compréhension commune.</p>
+    </article>
+    <article class="fam s">
+      <span class="etiq s">Argumentation collective</span>
+      <h4>Débat ou discussion structurée</h4>
+      <p><strong>Exemple :</strong> faut-il réserver davantage d'espace aux piétons aux abords de l'école? Les groupes examinent des données et des besoins différents.</p>
+      <p><strong>Étapes :</strong> prise de position provisoire → arguments et preuves → écoute et réponses → position révisée.</p>
+      <p><strong>Apprentissage :</strong> justifier, considérer un contre-argument, négocier une proposition raisonnée.</p>
+      <p><strong>Piège :</strong> récompenser surtout l'aisance orale ou l'opinion la plus populaire.</p>
+    </article>
+    <article class="fam r">
+      <span class="etiq r">Recherche en coopération</span>
+      <h4>Investigation ou enquête de groupe</h4>
+      <p><strong>Exemple :</strong> proposer un aménagement de cour plus accueillant en croisant usages, ensoleillement et contraintes de coût.</p>
+      <p><strong>Étapes :</strong> définir une question commune → chercher en groupes → examiner les apports → élaborer et défendre une proposition.</p>
+      <p><strong>Apprentissage :</strong> coordonner une recherche et articuler les résultats plutôt que juxtaposer des parties.</p>
+      <p><strong>Piège :</strong> transformer l'enquête collective en découpage administratif de tâches.</p>
+    </article>
+  </div>
+  <div class="defile"><table>
+    <caption>Quelle est la véritable activité cognitive des élèves?</caption>
+    <thead><tr><th>Configuration</th><th>Décision intellectuelle attendue</th><th>Trace d'apprentissage à rechercher</th></tr></thead>
+    <tbody>
+      <tr><th>Jigsaw</th><td>Expliquer l'apport de sa source, comprendre les autres et construire des relations.</td><td>Une synthèse individuelle qui mobilise les sources des pairs, et non sa seule « pièce ».</td></tr>
+      <tr><th>Débat structuré</th><td>Évaluer des arguments, les relier à des indices, réviser une position.</td><td>Une justification mentionnant un argument entendu, avec une nuance.</td></tr>
+      <tr><th>Enquête de groupe</th><td>Interpréter des informations et négocier une proposition cohérente.</td><td>Une production intégrée, plus une justification individuelle d'un choix collectif.</td></tr>
+    </tbody>
+  </table></div>
+  <details><summary>Et le tutorat, l'enseignement réciproque, le jeu de rôle?</summary><p>Ce sont d'autres configurations possibles. Dans le <strong>tutorat</strong>, l'explication du pair et la rétroaction doivent aider l'autre à comprendre; le tuteur peut aussi apprendre en expliquant. Dans l'<strong>enseignement réciproque</strong>, chacun exerce à tour de rôle des fonctions de questionnement, de clarification ou de synthèse. Le <strong>jeu de rôle</strong> peut soutenir la décentration et l'analyse de points de vue, à condition de préparer le cadre, d'éviter les caricatures et d'objectiver les apprentissages. Aucune technique ne remplace à elle seule la définition des objectifs et des critères.</p></details>
+  <div class="activite"><div class="tete">✎ Reconnaître une configuration et sa limite</div><p class="consigne">Cherchez les contributions cognitives et les éléments manquants.</p><div data-quiz="modeles"></div></div>
+</section>
+
+<section id="choisir" aria-labelledby="t-choisir">
+  <p class="chap-num">Chapitre 2</p>
+  <h2 id="t-choisir">Une question décisive : ont-ils besoin les uns des autres pour apprendre?</h2>
+  <p>Il ne faut pas imposer le travail coopératif à toute tâche. Il est particulièrement pertinent quand les apports et les interactions peuvent améliorer la compréhension, la décision ou l'argumentation — <strong>et qu'on peut en vérifier l'effet chez chaque élève</strong>.</p>
+  <div class="carte"><h3 style="margin-top:0">Trois tests avant de retenir une démarche sociale</h3><ol>
+    <li><strong>Test de nécessité.</strong> Si les élèves pouvaient produire exactement le même raisonnement sans écouter personne, l'interdépendance est-elle suffisamment forte?</li>
+    <li><strong>Test de contribution.</strong> Les rôles permettent-ils à chacun d'expliquer, de questionner, de décider ou de vérifier, au lieu de « colorier », « écrire au propre » ou « tenir la feuille »?</li>
+    <li><strong>Test de transfert individuel.</strong> Comment saurez-vous que tous ont compris, au-delà de la réussite de l'affiche ou de la présentation commune?</li>
+  </ol></div>
+  <h3>Rôles utiles… et rôles décoratifs</h3>
+  <div class="grille3">
+    <div class="fam p"><h4>Relier</h4><p>Le ou la <strong>personne de synthèse</strong> demande : « Comment notre idée A se relie-t-elle à l'idée B? » — une fonction cognitive réelle.</p></div>
+    <div class="fam s"><h4>Questionner</h4><p>La <strong>personne responsable des preuves</strong> demande : « Sur quoi appuie-t-on cette affirmation? » — elle ne se contente pas de gérer le temps.</p></div>
+    <div class="fam r"><h4>Faire participer</h4><p>La <strong>personne régulatrice</strong> vérifie : « Quelle idée n'a-t-on pas encore entendue? » — puis aide le groupe à en tenir compte.</p></div>
+  </div>
+  <p class="petit">Un rôle d'organisation peut être utile, mais il n'est pas une preuve suffisante de coopération intellectuelle. Les rôles peuvent tourner; personne ne doit être enfermé dans une position de « bon élève qui explique » ou « élève qui reçoit ».</p>
+  <div class="encadre vigil"><div class="tete">! Ne pas confondre égalité de parole et équité d'apprentissage</div><p>Parler autant ne signifie pas apprendre autant. Certaines personnes ont besoin d'un temps de préparation, d'un appui linguistique, d'un mode d'expression différent ou d'un soutien pour intervenir. La qualité des <strong>idées prises en compte</strong> compte davantage que le simple décompte des tours de parole.</p></div>
+  <div class="activite"><div class="tete">✎ Améliorer l'interdépendance</div><p class="consigne">Quelle modification change vraiment la qualité de la coopération?</p><div data-quiz="choisir"></div></div>
+</section>
+
+<section id="conduire" aria-labelledby="t-conduire">
+  <p class="chap-num">Chapitre 3</p>
+  <h2 id="t-conduire">Quatre moments à planifier, observer et réguler</h2>
+  <p>Les étapes ci-dessous sont des repères souples. Cliquez sur un moment pour voir <strong>ce que l'enseignante organise</strong>, <strong>ce que les élèves pensent</strong> et <strong>quelle trace</strong> rend l'apprentissage visible.</p>
+  <div class="onglets" role="tablist" aria-label="Moments d'une démarche sociale et coopérative" id="onglets-moments">
+    <button type="button" role="tab" id="tab-0" aria-controls="pan-0" aria-selected="true" tabindex="0">1. Préparer</button>
+    <button type="button" role="tab" id="tab-1" aria-controls="pan-1" aria-selected="false" tabindex="-1">2. Outiller</button>
+    <button type="button" role="tab" id="tab-2" aria-controls="pan-2" aria-selected="false" tabindex="-1">3. Coopérer</button>
+    <button type="button" role="tab" id="tab-3" aria-controls="pan-3" aria-selected="false" tabindex="-1">4. Objectiver</button>
+  </div>
+  <div class="panneau" role="tabpanel" id="pan-0" aria-labelledby="tab-0" tabindex="0">
+    <h3 style="margin-top:0">1. Préparer : rendre la tâche commune nécessaire</h3>
+    <div class="roles"><div class="role"><h4>L'enseignante</h4><ul><li>Clarifie le contenu à apprendre et la contribution des disciplines.</li><li>Prévoit des ressources ou points de vue complémentaires et forme les groupes.</li><li>Anticipe les obstacles de participation.</li></ul></div><div class="role"><h4>Les élèves</h4><ul><li>Comprennent la question et les critères de réussite.</li><li>Identifient ce qu'ils savent et doivent apprendre des autres.</li><li>Formulent une première piste personnelle.</li></ul></div></div>
+    <p><strong>Question :</strong> « Pourquoi avons-nous besoin des autres pour réussir cette tâche? »</p><p class="petit">Trace : hypothèse individuelle ou question à transmettre au groupe.</p>
+  </div>
+  <div class="panneau" role="tabpanel" id="pan-1" aria-labelledby="tab-1" tabindex="0" hidden>
+    <h3 style="margin-top:0">2. Outiller : apprendre à interagir pour penser</h3>
+    <div class="roles"><div class="role"><h4>L'enseignante</h4><ul><li>Montre ce qu'est une reformulation ou un désaccord appuyé sur une preuve.</li><li>Présente des rôles productifs, des règles et une répartition des ressources.</li><li>Précise ce qui restera à démontrer individuellement.</li></ul></div><div class="role"><h4>Les élèves</h4><ul><li>Préparent une explication courte et intelligible.</li><li>Prévoient des questions à poser et des indices à partager.</li><li>Reformulent la fonction de leur rôle.</li></ul></div></div>
+    <p><strong>Question :</strong> « Comment saurai-je que tu m'as compris? »</p><p class="petit">Trace : mini-fiche d'expertise, critères de discussion, argument préparé.</p>
+  </div>
+  <div class="panneau" role="tabpanel" id="pan-2" aria-labelledby="tab-2" tabindex="0" hidden>
+    <h3 style="margin-top:0">3. Coopérer et réguler : transformer l'échange en raisonnement</h3>
+    <div class="roles"><div class="role"><h4>L'enseignante</h4><ul><li>Observe qui contribue, qui écoute et comment les idées changent.</li><li>Relance un raisonnement sans décider à la place du groupe.</li><li>Réajuste la répartition ou les aides si un élève reste à l'écart.</li></ul></div><div class="role"><h4>Les élèves</h4><ul><li>Expliquent, interrogent, comparent et justifient leurs idées.</li><li>Utilisent les apports des autres pour modifier leur compréhension.</li><li>Construisent une proposition commune argumentée.</li></ul></div></div>
+    <p><strong>Question :</strong> « Quelle idée d'un pair a fait évoluer votre proposition, et pourquoi? »</p><p class="petit">Trace : annotation de changements, tableau des arguments, justification commune.</p>
+  </div>
+  <div class="panneau" role="tabpanel" id="pan-3" aria-labelledby="tab-3" tabindex="0" hidden>
+    <h3 style="margin-top:0">4. Objectiver : faire le point sur deux apprentissages</h3>
+    <div class="roles"><div class="role"><h4>L'enseignante</h4><ul><li>Stabilise les connaissances ou critères issus des échanges.</li><li>Vérifie ce que chacun peut expliquer seul.</li><li>Propose un retour bref sur la qualité du fonctionnement du groupe.</li></ul></div><div class="role"><h4>Les élèves</h4><ul><li>Rédigent ou formulent une réponse individuelle justifiée.</li><li>Nomment une contribution utile reçue ou apportée.</li><li>Proposent un ajustement concret pour la prochaine coopération.</li></ul></div></div>
+    <p><strong>Question :</strong> « Qu'as-tu compris grâce aux échanges que tu ne comprenais pas au départ? »</p><p class="petit">Trace : billet individuel + autoévaluation ciblée de la coopération.</p>
+  </div>
+  <div class="encadre garder"><div class="tete">✓ Une enseignante très présente, mais autrement</div><p>Elle enseigne des habiletés d'interaction, organise l'interdépendance, observe les relations et intervient lorsque les idées n'avancent pas. Elle ne se contente ni de distribuer des rôles ni de laisser « la dynamique de groupe » régler l'apprentissage.</p></div>
+  <div class="activite"><div class="tete">✎ Quelle relance soutient le collectif?</div><p class="consigne">Choisissez l'intervention qui fait progresser la compréhension et les échanges.</p><div data-quiz="conduire"></div></div>
+</section>
+
+<section id="evaluer" aria-labelledby="t-evaluer">
+  <p class="chap-num">Chapitre 4</p>
+  <h2 id="t-evaluer">Évaluer deux dimensions, sans confondre leurs preuves</h2>
+  <p>Une activité sociale peut viser <strong>un apprentissage disciplinaire</strong> (comparer des explications, justifier une décision) et <strong>des apprentissages de coopération</strong> (écouter, expliquer, tenir compte des autres). Ces dimensions se soutiennent, mais leurs preuves ne sont pas interchangeables.</p>
+  <div class="defile"><table>
+    <caption>Trois outils souvent complémentaires</caption>
+    <thead><tr><th>Outil</th><th>Ce qu'il permet de voir</th><th>Ce qu'il ne suffit pas à démontrer</th></tr></thead>
+    <tbody>
+      <tr><th>Grille d'observation des échanges</th><td>Reformulations, questions, intégration des idées, participation</td><td>Que tous maîtrisent le contenu disciplinaire</td></tr>
+      <tr><th>Production collective</th><td>Qualité de la synthèse ou de la proposition du groupe</td><td>Qui comprend vraiment quoi, individuellement</td></tr>
+      <tr><th>Billet individuel justifié</th><td>Capacité personnelle à expliquer, comparer ou mobiliser un apport entendu</td><td>La qualité de toutes les interactions vécues en groupe</td></tr>
+    </tbody>
+  </table></div>
+  <p>Pour analyser une vignette comportant trois outils, vous pouvez en <strong>choisir deux</strong> et montrer, pour chacun, sa pertinence, ses limites et une amélioration. Il n'est pas nécessaire de prétendre qu'un outil est « mauvais » parce qu'il ne mesure pas tout.</p>
+  <div class="encadre cua"><div class="tete">CUA : rendre la participation possible sans retirer la réflexion</div>
+    <ul>
+      <li><strong>Avant l'échange :</strong> fournir les documents en audio, visuel ou texte adapté, et un temps individuel de préparation.</li>
+      <li><strong>Pendant :</strong> afficher des amorces utiles (« Peux-tu expliquer pourquoi? », « Je retiens ton idée parce que… »), prévoir des rôles tournants et permettre un appui écrit ou visuel.</li>
+      <li><strong>Après :</strong> permettre plusieurs modalités d'expression de la compréhension (texte bref, audio, schéma commenté), en conservant les mêmes exigences de justification.</li>
+    </ul>
+  </div>
+  <div class="encadre vigil"><div class="tete">! Vigilance culturelle et éthique</div><p>Lorsqu'une tâche aborde des perspectives autochtones ou des réalités sociales sensibles, utiliser des sources contextualisées et situées, autoriser les nuances et <strong>ne jamais demander à une élève de parler au nom de toute sa communauté</strong>. La coopération ne doit pas obliger à divulguer une expérience personnelle pour participer.</p></div>
+  <div class="activite"><div class="tete">✎ Des preuves qui ne disent pas toutes la même chose</div><p class="consigne">Examinez ce que chaque trace autorise réellement comme jugement.</p><div data-quiz="evaluer"></div></div>
+</section>
+
+<section id="revision" aria-labelledby="t-revision">
+  <p class="chap-num">Chapitre 5 · Travail autonome</p>
+  <h2 id="t-revision">Réviser sur une situation inédite</h2>
+  <p>Choisissez l'un des <strong>trois cas fictifs</strong> ci-dessous. Ils servent à s'entraîner aux exigences de l'examen, sans reproduire le sujet ni prétendre décrire les animations des équipes.</p>
+  <div class="revision-intro"><span>≈ 15 à 25 minutes par cas</span><span>5 réponses à construire</span><span>Rétroactions à découvrir</span><span>Enregistrement local</span></div>
+  <div class="revision-cas">
+    <label for="revision-cas-select"><strong>Je choisis mon cas :</strong></label><br>
+    <select id="revision-cas-select" style="margin:.5rem 0 1rem;min-width:min(100%,430px)">
+      <option value="experts">A · Le quartier en transformation (jigsaw)</option>
+      <option value="debat">B · Devant notre école (débat structuré)</option>
+      <option value="enquete">C · Une cour plus fraîche (enquête de groupe)</option>
+    </select>
+    <div id="revision-vignette" aria-live="polite"></div>
+  </div>
+  <div class="activite"><div class="tete">✎ Se situer avant d'écrire</div><p class="consigne">Quelle réponse montre déjà un jugement articulé et justifié?</p><div data-quiz="revision"></div></div>
+  <div id="revision-etapes">
+    <article class="revision-etape"><h3>1. Reconnaître l'approche à partir d'indices</h3><label class="prompt" for="revision-1">Quelle configuration de la famille 3 est visée? Appuyez votre réponse sur <strong>deux indices précis</strong> du cas. Que montre la mise en œuvre réelle?</label><textarea id="revision-1" data-revision-reponse="1" placeholder="Je reconnais… parce que… Dans la vignette, … montre que…"></textarea><div class="revision-verif"><p>Je vérifie :</p><label><input type="checkbox" data-revision-verif="1">J'ai nommé l'approche ou la configuration visée.</label><label><input type="checkbox" data-revision-verif="1">J'ai relevé deux indices concrets du cas.</label><label><input type="checkbox" data-revision-verif="1">J'ai expliqué les liens entre les indices et l'apprentissage, avec une nuance.</label></div><details><summary>Comparer ma réponse à une piste de correction</summary><p data-modele="1"></p></details></article>
+    <article class="revision-etape"><h3>2. Relier la situation aux fondements</h3><label class="prompt" for="revision-2">Quels liens faites-vous avec l'apprentissage social et les relations <strong>enseignante–élèves–savoir</strong>? Situez au moins un moment de la vignette; évitez les étiquettes automatiques.</label><textarea id="revision-2" data-revision-reponse="2" placeholder="À ce moment, les élèves… Une lecture avec Houssaye permet de…"></textarea><div class="revision-verif"><p>Je vérifie :</p><label><input type="checkbox" data-revision-verif="2">J'ai situé un fait ou un moment précis.</label><label><input type="checkbox" data-revision-verif="2">J'ai établi un lien expliqué avec une relation ou un fondement.</label><label><input type="checkbox" data-revision-verif="2">J'ai nuancé la place de l'enseignante et celle du savoir.</label></div><details><summary>Comparer ma réponse à une piste de correction</summary><p data-modele="2"></p></details></article>
+    <article class="revision-etape"><h3>3. Analyser l'activité cognitive et la coopération réelle</h3><label class="prompt" for="revision-3">Que pensent, décident et expliquent les élèves <strong>réellement</strong>? L'interdépendance et la responsabilité individuelle sont-elles suffisantes? Quel apprentissage risque de manquer?</label><textarea id="revision-3" data-revision-reponse="3" placeholder="Certains élèves… Les interactions permettent… Mais le risque est…"></textarea><div class="revision-verif"><p>Je vérifie :</p><label><input type="checkbox" data-revision-verif="3">J'ai nommé une opération intellectuelle observable.</label><label><input type="checkbox" data-revision-verif="3">J'ai analysé la contribution individuelle et la nécessité des échanges.</label><label><input type="checkbox" data-revision-verif="3">J'ai expliqué un effet possible sur les apprentissages.</label></div><details><summary>Comparer ma réponse à une piste de correction</summary><p data-modele="3"></p></details></article>
+    <article class="revision-etape"><h3>4. Examiner deux outils d'évaluation</h3><label class="prompt" for="revision-4">Choisissez <strong>deux des trois outils</strong> du cas. Pour chacun, précisez ce qu'il permet de constater, ce qu'il ne permet pas de conclure et un ajustement possible.</label><textarea id="revision-4" data-revision-reponse="4" placeholder="L'outil A montre… mais ne suffit pas à… Pour l'améliorer…"></textarea><div class="revision-verif"><p>Je vérifie :</p><label><input type="checkbox" data-revision-verif="4">J'ai examiné exactement deux outils.</label><label><input type="checkbox" data-revision-verif="4">J'ai distingué apprentissage disciplinaire et coopération, au besoin.</label><label><input type="checkbox" data-revision-verif="4">J'ai proposé des améliorations réalistes.</label></div><details><summary>Comparer ma réponse à une piste de correction</summary><p data-modele="4"></p></details></article>
+    <article class="revision-etape"><h3>5. Justifier une décision professionnelle</h3><label class="prompt" for="revision-5">Quelle modification prioriseriez-vous? Dites <strong>ce que les élèves feraient concrètement</strong> et pourquoi cela favoriserait l'apprentissage. Ajoutez une adaptation CUA et une autre piste possible.</label><textarea id="revision-5" data-revision-reponse="5" placeholder="Je modifierais d'abord… Les élèves devraient alors… Pour réduire l'obstacle…"></textarea><div class="revision-verif"><p>Je vérifie :</p><label><input type="checkbox" data-revision-verif="5">Ma priorité découle du problème pédagogique identifié.</label><label><input type="checkbox" data-revision-verif="5">J'ai précisé le geste des élèves et son effet attendu.</label><label><input type="checkbox" data-revision-verif="5">Mon aide CUA préserve le raisonnement et j'envisage une alternative.</label></div><details><summary>Comparer ma réponse à une piste de correction</summary><p data-modele="5"></p></details></article>
+  </div>
+  <div class="activite">
+    <div class="tete">Mon bilan de révision</div>
+    <p class="revision-compteur" id="revision-compteur" aria-live="polite">0 critère sur 15 vérifié pour ce cas</p>
+    <p>Pour atteindre une <strong>analyse articulée et justifiée</strong>, ne vous contentez pas de repérer des caractéristiques. Montrez comment elles se relient aux choix pédagogiques et aux apprentissages. Une réponse peut être courte tout en étant solide.</p>
+    <div class="revision-pied"><button class="btn plein" type="button" id="revision-export">Télécharger mes réponses (.txt)</button><button class="btn" type="button" id="revision-effacer">Effacer mes réponses pour ce cas</button></div>
+    <p class="revision-avertissement">Vos textes demeurent sur votre appareil, dans ce navigateur si le stockage est autorisé. Aucun compte ni envoi à l'enseignante. Téléchargez-les pour en garder une copie.</p>
+    <p id="revision-message" aria-live="polite"></p>
+  </div>
+</section>
+
+<section id="cloture" aria-labelledby="t-cloture">
+  <p class="chap-num">Synthèse</p>
+  <h2 id="t-cloture">Les six questions à garder sous la main</h2>
+  <div class="carte"><ol class="questions">
+    <li><strong>Pourquoi le collectif?</strong> Que permet-il de comprendre ou de faire que les élèves ne feraient pas aussi bien isolément?</li>
+    <li><strong>Quelle interdépendance?</strong> Les contributions sont-elles nécessaires et complémentaires?</li>
+    <li><strong>Quelle responsabilité individuelle?</strong> Comment vérifier ce que chacun apporte et comprend?</li>
+    <li><strong>Quelles interactions cognitives?</strong> Expliquer, reformuler, argumenter, confronter, négocier, synthétiser?</li>
+    <li><strong>Quels critères et quelles traces?</strong> Le résultat de groupe suffit-il, ou faut-il regarder aussi chaque élève?</li>
+    <li><strong>Quel ajustement prioritaire?</strong> Comment soutenir la participation sans enlever le défi intellectuel?</li>
+  </ol></div>
+  <details><summary>Les cinq niveaux de compréhension, en langage clair (repère SOLO)</summary><ul>
+    <li><strong>Compréhension non démontrée :</strong> l'analyse ne permet pas encore de reconnaître la situation.</li>
+    <li><strong>Repérage d'un élément pertinent :</strong> un indice juste est nommé, mais son sens reste peu expliqué.</li>
+    <li><strong>Repérage de plusieurs éléments :</strong> plusieurs caractéristiques sont identifiées, sans lien construit entre elles.</li>
+    <li><strong>Analyse articulée et justifiée :</strong> les indices sont reliés à la coopération réelle, aux choix de l'enseignante et aux apprentissages. <strong>Voilà le niveau visé.</strong></li>
+    <li><strong>Analyse approfondie et transférable :</strong> nuances supplémentaires, conditions et hypothèses de transfert. <strong>Ce niveau n'est pas exigé pour obtenir tous les points.</strong></li>
+  </ul></details>
+  <div class="encadre garder"><div class="tete">✓ La phrase à garder pour l'examen</div><p>Ne dites pas seulement « c'est de la coopération parce qu'ils sont en équipe ». Montrez <strong>ce qui oblige les élèves à apprendre les uns des autres, ce que chacun comprend et comment on le sait</strong>.</p></div>
+  <h3>Pour aller plus loin</h3>
+  <ul class="refs">
+    <li>Support du cours 3PDG260 : <em>Famille 3 — Approches sociales et coopératives</em> (13 diapositives).</li>
+    <li>Aronson, E., et coll. (1978). <a href="https://jigsaw.org/" target="_blank" rel="noopener noreferrer">The Jigsaw Classroom</a> — description de la méthode mosaïque, par son équipe de conception.</li>
+    <li>Gillies, R. M. (2016). <a href="https://ro.ecu.edu.au/ajte/vol41/iss3/3/" target="_blank" rel="noopener noreferrer">Cooperative Learning: Review of Research and Practice</a>. <em>Australian Journal of Teacher Education, 41</em>(3), 39–54.</li>
+    <li>Johnson, D. W., &amp; Johnson, R. T. (1999). <em>Learning Together and Alone</em> (5e éd.). Allyn &amp; Bacon.</li>
+    <li>Sharan, S., &amp; Sharan, Y. (1992). <em>Expanding Cooperative Learning through Group Investigation</em>. Teachers College Press.</li>
+  </ul>
+  <p class="petit">Les vignettes et exemples sont fictifs et servent à la révision. Les pistes de correction sont proposées pour soutenir le jugement pédagogique, non pour imposer une réponse unique.</p>
+  <a class="haut" href="#accueil">↑ Retour à l'accueil</a>
+</section>
+
+</main></div>
+<script>
+(function(){
+"use strict";
+
+var QUIZ={
+  diagnostic:[{q:"Quelle situation montre le mieux la famille 3?",a:["Quatre élèves remplissent chacun une section d'une affiche, puis les collent ensemble.","Quatre élèves combinent des sources complémentaires, expliquent leurs choix et vérifient individuellement ce qu'ils ont compris.","Quatre élèves écoutent une explication de l'enseignante à la même table."],c:1,e:"Le groupe doit avoir besoin des contributions et des raisonnements de chacun. L'affiche collective ou la disposition des tables ne suffit pas."}],
+  fondements:[{q:"Une élève a compris son document, mais ne peut expliquer les contributions des autres. Quelle lecture est la plus juste?",a:["La responsabilité individuelle est démontrée parce qu'elle connaît sa partie.","Le travail de groupe est réussi, donc tous les apprentissages le sont.","Elle maîtrise peut-être sa partie, mais la synthèse et l'apprentissage commun ne sont pas encore démontrés."],c:2,e:"L'expertise sur une partie est utile, mais l'interdépendance devrait conduire à une compréhension plus intégrée. Une trace individuelle peut montrer si cet apprentissage a eu lieu."}],
+  modeles:[
+    {q:"Dans un jigsaw, après les groupes experts, les élèves retournent en équipe de base et lisent leurs notes à tour de rôle. Que manque-t-il surtout?",a:["Une tâche obligeant à relier les apports des experts et à vérifier la compréhension de chacun.","La présence obligatoire d'une affiche colorée.","Un long cours magistral qui résume toutes les parties avant le retour en équipe."],c:0,e:"La méthode mosaïque ne se limite pas à une circulation d'informations. Les élèves doivent comprendre, questionner et relier les pièces du savoir."},
+    {q:"Quel indice distingue un débat structuré d'un échange libre d'opinions?",a:["On demande aux élèves de parler le plus longtemps possible.","Les élèves tirent une position au hasard et ne doivent jamais la nuancer.","Les élèves mobilisent des indices, reformulent un argument adverse et peuvent réviser leur position."],c:2,e:"La qualité des arguments, l'écoute et la révision intellectuelle définissent l'apprentissage, non le volume de paroles."},
+    {q:"Une enquête de groupe relève-t-elle exclusivement de la famille 3?",a:["Oui, tous les groupes appartiennent à la famille sociale.","Non : elle peut articuler investigation d'un problème (famille 2a) et coopération structurée (famille 3).", "Non : les groupes doivent toujours être remplacés par du travail individuel."],c:1,e:"Les familles de Joyce éclairent des intentions dominantes et peuvent se combiner : examiner les objets d'apprentissage et les actions réelles permet de nuancer le classement."}
+  ],
+  choisir:[
+    {q:"Une équipe comporte une personne qui trouve les informations et trois qui copient. Quel ajustement serait le plus structurant?",a:["Demander simplement de travailler plus vite.","Attribuer des rôles de secrétaire, décorateur et surveillant du temps.","Répartir des sources nécessaires, puis exiger des explications croisées et une synthèse commune."],c:2,e:"La complémentarité doit concerner les idées et les décisions. Des fonctions logistiques peuvent aider, mais elles ne suffisent pas à créer l'apprentissage coopératif."},
+    {q:"Une élève participe peu à l'oral, mais prépare des arguments pertinents par écrit. Quelle réaction est cohérente avec la CUA?",a:["Prévoir un temps de préparation et une modalité de contribution accessible, puis examiner la qualité de son argument.","Lui retirer toute responsabilité intellectuelle.","Évaluer uniquement le nombre de prises de parole."],c:0,e:"On retire un obstacle à la participation sans renoncer aux exigences d'argumentation, de comparaison ou de justification."}
+  ],
+  conduire:[
+    {q:"Pendant un débat, un élève impose rapidement sa conclusion. Quelle relance soutient le mieux l'apprentissage?",a:["« Le chef de groupe a décidé, passez à l'affiche. »","« Quel argument n'a pas encore été entendu? Qu'est-ce qui pourrait modifier notre choix? »","« Évitez les désaccords pour préserver une bonne ambiance. »"],c:1,e:"Cette relance redonne une place aux contributions et exige un travail intellectuel sur les arguments."},
+    {q:"Quel retour de fin de séance est le plus riche?",a:["« Avez-vous aimé travailler ensemble? »","« Qui a le mieux joué son rôle? »","« Quelle idée d'un pair a transformé votre réponse? Qu'avez-vous appris et que changeriez-vous dans vos échanges? »"],c:2,e:"On vérifie à la fois le contenu appris et le fonctionnement de la coopération, avec des indices concrets et un ajustement possible."}
+  ],
+  evaluer:[
+    {q:"La production collective est excellente. Peut-on conclure que chaque élève sait justifier la décision?",a:["Oui : une très bonne affiche prouve la compréhension individuelle.","Pas nécessairement : une trace individuelle pourrait montrer ce que chacun comprend et peut justifier.","Non : il faut annuler l'activité de groupe."],c:1,e:"La production commune informe sur le résultat de l'équipe. Pour juger une compétence individuelle, il faut également examiner l'apprentissage personnel."},
+    {q:"Une grille note que tous ont parlé au moins une fois. Quel est son principal angle mort?",a:["Elle ne révèle pas si les interventions ont permis de comparer, questionner et améliorer les idées.","Elle renseigne complètement sur tous les apprentissages.","Elle empêche forcément une bonne coopération."],c:0,e:"Compter des tours de parole peut aider à repérer un accès inégal, mais la qualité cognitive des échanges et les apprentissages doivent être observés autrement."}
+  ],
+  revision:[{q:"Quelle formulation atteint une analyse articulée et justifiée?",a:["« C'est de l'apprentissage coopératif, car les élèves sont en groupe. »","« Il y a des rôles et une affiche à la fin. »","« Les documents complémentaires créent une dépendance entre experts, mais la synthèse reste une juxtaposition; une justification individuelle mobilisant deux sources permettrait de vérifier la construction commune. »"],c:2,e:"Cette réponse relie deux indices à la coopération réelle, puis envisage une trace qui permet de vérifier l'apprentissage. C'est le niveau d'analyse visé."}]
+};
+
+function buildQuiz(container,items,key){
+  items.forEach(function(q,idx){
+    var bloc=document.createElement("div");bloc.className="item";
+    var field=document.createElement("fieldset"),legend=document.createElement("legend");legend.textContent=q.q;field.appendChild(legend);
+    var name="quiz-"+key+"-"+idx;
+    var offset=(key.length+idx)%q.a.length;
+    for(var pas=0;pas<q.a.length;pas++){
+      var j=(offset+pas)%q.a.length;
+      var label=document.createElement("label");label.className="choix";
+      var input=document.createElement("input");input.type="radio";input.name=name;input.value=String(j);
+      var span=document.createElement("span");span.textContent=q.a[j];label.appendChild(input);label.appendChild(span);field.appendChild(label);
+    }
+    var btn=document.createElement("button");btn.type="button";btn.className="btn plein";btn.textContent="Vérifier ma réponse";
+    var retro=document.createElement("div");retro.setAttribute("role","status");retro.setAttribute("aria-live","polite");
+    btn.addEventListener("click",function(){var selected=field.querySelector("input:checked");if(!selected){retro.className="retro neutre";retro.textContent="Choisissez d'abord une réponse.";return;}var correct=Number(selected.value)===q.c;retro.className="retro "+(correct?"ok":"nok");retro.textContent=(correct?"✓ Oui. ":"À revoir. ")+q.e;});
+    bloc.appendChild(field);bloc.appendChild(btn);bloc.appendChild(retro);container.appendChild(bloc);
+  });
+}
+document.querySelectorAll("[data-quiz]").forEach(function(container){var key=container.getAttribute("data-quiz");if(QUIZ[key])buildQuiz(container,QUIZ[key],key);});
+
+var tabs=Array.prototype.slice.call(document.querySelectorAll("#onglets-moments [role=tab]"));
+function activeTab(i,focus){tabs.forEach(function(tab,j){var yes=j===i;tab.setAttribute("aria-selected",yes?"true":"false");tab.tabIndex=yes?0:-1;document.getElementById("pan-"+j).hidden=!yes;});if(focus)tabs[i].focus();}
+tabs.forEach(function(tab,i){tab.addEventListener("click",function(){activeTab(i,false);});tab.addEventListener("keydown",function(event){var j=null;if(event.key==="ArrowRight")j=(i+1)%tabs.length;else if(event.key==="ArrowLeft")j=(i+tabs.length-1)%tabs.length;else if(event.key==="Home")j=0;else if(event.key==="End")j=tabs.length-1;if(j!==null){event.preventDefault();activeTab(j,true);}});});
+
+var CASES={
+  experts:{name:"A · Le quartier en transformation",kind:"Jigsaw / groupes d'experts",description:
+    "<h3>A · Le quartier en transformation</h3><p>En 5e année, des équipes de trois doivent expliquer <strong>comment un quartier a changé au fil du temps</strong>. Chaque élève reçoit une source différente : (1) une photo ancienne des rues, (2) un petit graphique de population, (3) un plan récent des déplacements. L'intention est de relier ces documents pour expliquer des transformations du milieu.</p><p>Les élèves rencontrent les camarades qui possèdent la même source dans des <strong>groupes experts</strong>, puis reviennent dans leur équipe de base. Chacun présente son document. Pour gagner du temps, l'enseignante demande une affiche avec trois cases séparées, une par source. Les élèves remplissent chacun leur case sans discuter des liens possibles. À la fin, elle questionne chaque élève uniquement sur <em>sa propre</em> source.</p><p><strong>Trois outils :</strong> (A) l'affiche collective à trois cases; (B) une grille « chaque élève a présenté son document »; (C) un billet individuel « explique un changement du quartier en reliant au moins deux sources ».</p>",models:[
+      "Le jigsaw est reconnaissable : chacun a une source complémentaire, passe par un groupe expert puis retourne en équipe de base. Toutefois, l'affiche finale conserve trois cases indépendantes et la vérification porte sur une seule source par élève. La structure est présente, mais l'interdépendance intellectuelle reste partiellement exploitée.",
+      "Les échanges en groupes experts et en équipes de base peuvent soutenir une construction sociale des connaissances (Vygotski). Quand les élèves tentent de relier les documents au changement du quartier, la relation élèves–savoir (« apprendre ») pourrait dominer. La décision de l'enseignante d'imposer trois cases séparées privilégie davantage son organisation de la tâche. Houssaye ne réduit pas « social » à « former ».",
+      "Les élèves expliquent effectivement leur propre source, mais ne questionnent guère les autres et ne doivent pas relier plusieurs types de preuves. Un élève peut réussir son morceau sans comprendre les transformations du quartier. La contribution individuelle existe, mais l'apprentissage commun et intégré reste à démontrer.",
+      "Choisissons A et C : A montre une production commune organisée, mais pas forcément les liens entre documents ni la compréhension individuelle. On pourrait demander sur l'affiche une relation explicative entre deux sources. C mesure directement la capacité de chacun à mobiliser deux documents; un critère de pertinence et d'explication des liens le renforcerait. B, s'il est choisi, documente la participation orale, pas la compréhension à elle seule.",
+      "Je remplacerais les trois cases juxtaposées par une question commune : « Quel changement peut-on expliquer en croisant au moins deux sources? » Les experts devraient questionner et relier leurs apports; chacun rédigerait ensuite sa justification. Des versions lisibles ou audio des documents et des amorces de questionnement aideraient les élèves sans fournir les liens. Une autre option serait une carte conceptuelle négociée avant le billet individuel."
+    ]},
+  debat:{name:"B · Devant notre école",kind:"Débat structuré",description:
+    "<h3>B · Devant notre école</h3><p>En 6e année, les élèves réfléchissent à une proposition d'aménagement : <strong>faut-il réserver davantage d'espace aux piétons devant l'école?</strong> L'enseignante remet trois ressources : des observations des déplacements le matin, une carte des accès et de courtes prises de position de personnes concernées. L'objectif est de <strong>justifier une décision en considérant plusieurs contraintes et points de vue</strong>.</p><p>Les équipes préparent un débat. Des rôles sont attribués, mais le « porte-parole » est le seul autorisé à parler au grand groupe. Deux élèves très à l'aise dominent alors l'échange. D'autres ont construit des arguments écrits, mais personne ne les consulte. Le débat se termine par un vote; la position majoritaire est présentée comme « la bonne réponse », sans retour sur les preuves ni les arguments opposés.</p><p><strong>Trois outils :</strong> (A) une grille qui compte les interventions orales; (B) une affiche des arguments par équipe; (C) une note individuelle « mon choix, une preuve et un argument adverse pris en compte ».</p>",models:[
+      "La situation vise une discussion ou un débat structuré autour d'une question citoyenne. Les ressources et la préparation d'arguments soutiennent le travail collectif. Mais le rôle de porte-parole monopolise l'expression, et le vote majoritaire remplace une analyse des raisons : la dimension intellectuelle du débat reste incomplète.",
+      "L'échange argumentatif peut soutenir une lecture socioconstructiviste, car les élèves confrontent leurs points de vue à des sources. La relation élèves–savoir (« apprendre ») pourrait être visible quand ils évaluent des preuves; l'organisation des tours et la gestion de la parole mettent aussi en jeu la relation enseignante–élèves (« former »). Une approche sociale n'est donc pas automatiquement le processus « former ».",
+      "Plusieurs élèves élaborent des arguments à l'écrit, mais la discussion publique n'utilise que les interventions de quelques porte-parole. La majorité vote sans nécessairement réexaminer les contraintes ou les preuves. On ne peut pas déduire du résultat du vote que chacun sait justifier et nuancer sa décision.",
+      "On peut retenir A et C : A renseigne sur qui parle, mais pas sur la qualité des arguments; ajouter une observation des reformulations et des références aux sources enrichirait la grille. C permet de vérifier un raisonnement individuel intégrant une preuve et un contre-argument. B, si choisi, montre les arguments préparés, mais pas leur appropriation ni leur prise en compte dans les échanges.",
+      "Je réorganiserais le débat pour que chacun ait un temps d'élaboration et une contribution nécessaire : discussion en petits groupes, porte-paroles tournants, puis réponse individuelle nuancée. Des cartes-arguments et des amorces écrites ou audio permettraient de contribuer sans dépendre exclusivement de l'aisance orale. Une alternative serait un débat silencieux annoté, suivi d'une synthèse collective fondée sur les preuves."
+    ]},
+  enquete:{name:"C · Une cour plus fraîche",kind:"Enquête de groupe",description:
+    "<h3>C · Une cour plus fraîche</h3><p>En 5e année, le conseil d'élèves veut proposer un aménagement pour rendre la cour de l'école <strong>plus agréable pendant les journées chaudes</strong>. Les équipes doivent tenir compte de trois aspects : zones d'ombre observées, usages de la cour et contraintes de coût. Le projet mobilise des notions de science, de mathématique et de vie collective.</p><p>Chaque groupe se répartit trois responsabilités : recherche sur l'ombre, liste des usages, estimation des coûts. L'enseignante fournit des documents adaptés et demande une proposition justifiée. À la mise en commun, chaque sous-groupe colle son document sur un grand panneau. Les propositions ne sont pas comparées entre elles, et l'enseignante valorise principalement la beauté de l'affiche. Une élève remarque qu'un emplacement très ombragé est aussi le lieu d'un jeu important; ce conflit n'est pas discuté.</p><p><strong>Trois outils :</strong> (A) une grille esthétique du panneau; (B) des notes d'observation sur les échanges et la répartition du travail; (C) un billet individuel « justifie un choix d'aménagement en reliant deux contraintes ».</p>",models:[
+      "Le projet prend la forme d'une enquête de groupe : question commune et contributions complémentaires (ombre, usages, coût). Toutefois, les résultats sont juxtaposés; le conflit entre ombrage et usage de la cour, qui nécessiterait justement une décision collective, n'est pas traité. L'intention coopérative est donc partiellement réalisée.",
+      "La recherche et l'analyse des contraintes mobilisent la relation élèves–savoir (« apprendre »), tandis que les interventions sur la répartition peuvent faire voir la relation enseignante–élèves (« former »). Le lien socioconstructiviste serait particulièrement clair si le groupe devait négocier une solution en prenant en compte les données de chacun. Cette enquête peut relever à la fois de la famille 2a et de la famille 3.",
+      "Chaque élève recueille peut-être un type d'information, mais la décision collective n'exige pas leur articulation. Le conflit entre l'ombre et un jeu aurait dû provoquer une comparaison argumentée des contraintes; il est laissé de côté. Les élèves fabriquent donc une affiche commune sans apprendre nécessairement à justifier ensemble un choix cohérent.",
+      "Choisissons B et C : B donne des indices sur la répartition et l'écoute, mais doit examiner aussi comment les idées des autres sont prises en compte. C révèle la capacité personnelle à relier deux contraintes et à justifier un aménagement. A, si choisi, renseigne sur la présentation graphique du panneau, mais pas directement sur l'objectif de raisonnement ou de coopération.",
+      "Je demanderais aux équipes de choisir une seule proposition d'aménagement en expliquant comment elle concilie l'ombre, les usages et les coûts. Chaque membre présenterait une contrainte, puis le groupe négocierait un compromis et chacun en justifierait un aspect. Des plans agrandis, pictogrammes et tableaux de contraintes aideraient l'accès sans fournir la décision. Une autre possibilité serait de comparer deux propositions contradictoires avant de faire un choix collectif."
+    ]}
+};
+
+var select=document.getElementById("revision-cas-select");
+var vignette=document.getElementById("revision-vignette");
+var champs=Array.prototype.slice.call(document.querySelectorAll("[data-revision-reponse]"));
+var coches=Array.prototype.slice.call(document.querySelectorAll("[data-revision-verif]"));
+var modeles=Array.prototype.slice.call(document.querySelectorAll("[data-modele]"));
+var message=document.getElementById("revision-message");
+var prefix="3pdg260_famille3_revision_v1_";
+var secours={};
+function key(k){return prefix+k;}
+function load(k){try{return localStorage.getItem(key(k));}catch(e){return secours[k]||null;}}
+function save(k,v){try{localStorage.setItem(key(k),v);}catch(e){secours[k]=v;}}
+function remove(k){try{localStorage.removeItem(key(k));}catch(e){delete secours[k];}}
+function saveCase(){save(select.value,JSON.stringify({answers:champs.map(function(x){return x.value;}),checked:coches.map(function(x){return x.checked;})}));}
+function counter(){var n=coches.filter(function(x){return x.checked;}).length;document.getElementById("revision-compteur").textContent=n+" critère"+(n>1?"s":"")+" sur 15 vérifié"+(n>1?"s":"")+" pour ce cas";}
+function renderCase(){var k=select.value,cas=CASES[k],data={};vignette.innerHTML=cas.description;try{data=JSON.parse(load(k)||"{}");}catch(e){data={};}champs.forEach(function(t,i){t.value=data.answers&&typeof data.answers[i]==="string"?data.answers[i]:"";});coches.forEach(function(b,i){b.checked=!!(data.checked&&data.checked[i]);});modeles.forEach(function(p,i){p.textContent=cas.models[i];p.closest("details").open=false;});message.textContent="";counter();}
+select.addEventListener("change",renderCase);
+champs.forEach(function(x){x.addEventListener("input",saveCase);});
+coches.forEach(function(x){x.addEventListener("change",function(){saveCase();counter();});});
+document.getElementById("revision-effacer").addEventListener("click",function(){if(!window.confirm("Effacer les cinq réponses et les 15 critères pour ce cas seulement?"))return;remove(select.value);renderCase();message.textContent="Les réponses de ce cas sont effacées. Les autres cas sont conservés.";});
+document.getElementById("revision-export").addEventListener("click",function(){var titre=CASES[select.value].name;var noms=["Reconnaître et justifier","Relier aux fondements","Activité cognitive et coopération","Examiner deux outils","Décision professionnelle et CUA"];var lines=["3PDG260 · Famille 3 · Révision autonome",titre,"Mes réponses personnelles (non transmises)",""];champs.forEach(function(t,i){lines.push((i+1)+". "+noms[i],t.value.trim()||"[Aucune réponse]","");});lines.push("Autoévaluation : "+coches.filter(function(x){return x.checked;}).length+" / 15 critères cochés");var blob=new Blob(["\ufeff"+lines.join("\n")],{type:"text/plain;charset=utf-8"}),url=URL.createObjectURL(blob),link=document.createElement("a");link.href=url;link.download="3PDG260_famille3_revision_"+select.value+".txt";document.body.appendChild(link);link.click();link.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);message.textContent="Le fichier de vos réponses a été préparé pour le téléchargement.";});
+renderCase();
+
+var menu=document.querySelector("nav.menu"),mobile=document.getElementById("mobile-menu");
+mobile.addEventListener("click",function(){var yes=menu.classList.toggle("ouvert");mobile.setAttribute("aria-expanded",yes?"true":"false");});
+document.querySelectorAll("nav.menu a").forEach(function(a){a.addEventListener("click",function(){menu.classList.remove("ouvert");mobile.setAttribute("aria-expanded","false");});});
+var links=Array.prototype.slice.call(document.querySelectorAll("nav.menu a[href^='#']"));
+function progression(){var total=document.documentElement.scrollHeight-window.innerHeight;document.getElementById("progression-barre").style.width=(total>0?Math.min(100,Math.max(0,100*window.scrollY/total)):100)+"%";var current="accueil";document.querySelectorAll("main section[id]").forEach(function(s){if(s.getBoundingClientRect().top<=180)current=s.id;});links.forEach(function(link){var active=link.getAttribute("href")==="#"+current;link.classList.toggle("actif",active);if(active)link.setAttribute("aria-current","location");else link.removeAttribute("aria-current");});}
+window.addEventListener("scroll",progression,{passive:true});window.addEventListener("resize",progression);progression();
+})();
+</script>
+</body>
+</html>
